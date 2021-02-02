@@ -356,7 +356,9 @@ public class NativeVideoDelegate {
     }
 
     public void onSurfaceReady(Surface surface) {
-        mediaPlayer.setSurface(surface);
+        if(surface.isValid()){
+            mediaPlayer.setSurface(surface);
+        }
         if (playRequested) {
             start();
         }
