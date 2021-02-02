@@ -253,10 +253,7 @@ public class ExoVideoDelegate {
     }
 
     public void onSurfaceReady(Surface surface) {
-        if (surface.isValid()) {
-            exoMediaPlayer.setSurface(surface);
-        }
-
+        exoMediaPlayer.setSurface(surface);
         if (playRequested) {
             exoMediaPlayer.setPlayWhenReady(true);
         }

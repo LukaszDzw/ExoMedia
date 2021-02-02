@@ -249,7 +249,9 @@ public class ExoMediaPlayer extends Player.DefaultEventListener {
 
     public void setSurface(@Nullable Surface surface) {
         this.surface = surface;
-        sendMessage(C.TRACK_TYPE_VIDEO, C.MSG_SET_SURFACE, surface, false);
+        if(surface.isValid()){
+            sendMessage(C.TRACK_TYPE_VIDEO, C.MSG_SET_SURFACE, surface, false);
+        }
     }
 
     @Nullable
